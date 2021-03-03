@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import One from '../pages/One.vue'
+import Two from '../pages/Two.vue'
+import Three from '../pages/Three.vue'
 
 
 const routerHistory = createWebHistory()
@@ -14,6 +16,14 @@ const router = createRouter({
     {
       path: '/one',
       component: One
+    },
+    {
+      path: '/two',
+      component: Two
+    },
+    {
+      path: '/three',
+      component: Three
     }
   ]
 })

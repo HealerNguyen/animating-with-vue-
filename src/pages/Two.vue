@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Example with transition</h4>
+    <h4>Example with page transition</h4>
     <button @click="toggleModal()">Open Modal</button>
     <transition name="fade">
       <div class="modal" v-if="isOpen">
@@ -26,25 +26,21 @@ export default {
 }
 </script>
 <style scoped>
-  .modal {
+.modal {
     width: 300px;
     background-color: gray;
     margin: auto;
     text-align: center;
     padding: 64px 48px;
     margin-top: 24px;
-  }
-  .fade-enter {
+}
+.fade-enter {
     opacity: 0;
-  }
-  .fade-enter-active {
+}
+.fade-enter-active,.fade-leave-active {
     transition: opacity .5s ease-out;
-  }
-  .fade-leave-to {
+}
+.fade-leave-to {
     opacity: 0;
-  }
-  .fade-leave-active {
-    transition: opacity .5s ease-out;
-  }
-
+}
 </style>

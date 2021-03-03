@@ -3,10 +3,15 @@
     <img class="logo-vue" alt="Vue logo" src="./assets/logo.png" />
   </div>
   <router-link to='/'><b>Trang chủ</b></router-link> |
-  <router-link to='/one'><b>Example one</b></router-link> |
-  
+  <router-link to='/one'><b>Modal</b></router-link> |
+  <router-link to='/two'><b>Page</b></router-link> |
+  <router-link to='/three'><b>Group</b></router-link> |
 
-  <router-view/>
+  <router-view v-slot="{ Component }">
+    <transition name="slide-fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style>
@@ -26,5 +31,26 @@
 }
 b {
   color: #1967d2;
+}
+/* .fade-enter {
+  opacity: 0;
+}
+.fade-enter-active,.fade-leave-active {
+  transition: opacity .5s ease-out;
+}
+.fade-leave-to {
+  opacity: 0;
+} */
+
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-enter-active,.slide-fade-leave-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
 }
 </style>
