@@ -1,4 +1,4 @@
-# animating-with-vue
+# animating-with-vue3
 Demo vuejs vesion 3 with vitejs
 
 ## Build Setup
